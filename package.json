@@ -4,8 +4,8 @@
   "description": "HTML5 Boilerplate for Herop",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "gulp"
+    "test": "echo \"Error: no test specified\" && exit 1"
+//    "postinstall": "gulp"
   },
   "author": "",
   "license": "ISC",
