@@ -21,6 +21,7 @@ gulp.task('server', function () {
 
 gulp.task('compile-sass', function () {
   return gulp.src(paths.scss)
+    .pipe(plugins.concat('main.scss'))
     .pipe(plugins.sass())
     .pipe(gulp.dest(dist + '/css'));
 });
