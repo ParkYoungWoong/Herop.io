@@ -1,5 +1,5 @@
 var express = require('express');
-var app = express.createServer(express.logger());
+var app = express();
 var glob = require('glob');
 
 app.set('views', './app/views');
