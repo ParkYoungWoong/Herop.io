@@ -64,6 +64,11 @@ html, body {
 .container {
   width: 100%;
   height: 100%;
-  background: red; }
+  background: #ff4641; }
   .container.test {
-    background: blue; }
+    background: #309ddb; }
+  .container .text {
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    padding-top: 100px; }
