@@ -8,6 +8,6 @@ module.exports = function (app) {
 router.get('/', function (req, res, next) {
     res.render('index', {
         title: 'INDEX PAGE',
-        test: 'Welcome to HEROP world!'
+        test: 'Good!!!'
     });
 });
