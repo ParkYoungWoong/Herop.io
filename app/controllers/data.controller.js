@@ -1,12 +1,11 @@
 var express = require('express');
 var router = express.Router();
+var data = require('../data/data.json');
 
 module.exports = function (app) {
-  app.use('/test', router);
+  app.use('/data', router);
 };
 
 router.get('/', function (req, res, next) {
-  res.render('test', {
-    title: 'HEROP CODE'
-  });
+  res.send(200, data);
 });

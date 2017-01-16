@@ -1,0 +1,22 @@
+[
+  {
+    "question": "`position`의 속성 값으로 옳지 않은 것은?",
+    "examples": [
+      "static",
+      "absolute",
+      "relative",
+      "none"
+    ],
+    "correctAnswer": 4
+  },
+  {
+    "question": "`display`의 속성 값으로 옳지 않은 것은?",
+    "examples": [
+      "visible",
+      "none",
+      "inline-block",
+      "inline"
+    ],
+    "correctAnswer": 1
+  }
+]

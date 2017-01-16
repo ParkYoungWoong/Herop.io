@@ -4,22 +4,9 @@
 
     <title><%= title %></title>
 
-    <meta charset="UTF-8"/>
-    <meta name="description" content=""/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1, minimum-scale=1"/>
+    <% include partials/head.ejs %>
 
-    <meta property="og:type" content="website"/>
-    <meta property="og:title" content=""/>
-    <meta property="og:description" content=""/>
-    <meta property="og:image" content=""/>
-    <meta property="og:url" content=""/>
-
-    <link rel="icon" href="favicon.png"/>
-    <link rel="apple-touch-icon-precomposed" href="favicon.png"/>
-
-    <link rel="stylesheet" href="/css/main.css"/>
+    <link rel="stylesheet" href="/css/main.css">
 
     <script src="/js/main.js"></script>
 
@@ -27,7 +14,15 @@
 <body>
 <div class="container test">
 
-    <div class="text"><%= test %></div>
+    <span class="question-num"></span>번 문제
+    <p></p>
+    <ol>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ol>
+    <div class="answer">정답은 <span></span>번 입니다!</div>
 
 </div>
 <script>

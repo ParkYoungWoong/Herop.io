@@ -52,5 +52,9 @@ a {
 }
 
 /* float clearfix */
-.clearfix{*zoom:1}
-.clearfix:after{content:"";display:block;clear:both}
+.clearfix { *zoom: 1; }
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+}

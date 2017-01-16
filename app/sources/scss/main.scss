@@ -1,16 +1,33 @@
 @charset "UTF-8";
 
+// COMMON
 html, body {
     width: 100%;
     height: 100%;
 }
+
+$red: #f44336;
+$orange: #FF5722;
+$yellow: #FFC107;
+$green: #4CAF50;
+$blue: #2196F3;
+$indigo: #3F51B5;
+$violet: #E91E63;
+$white: #EEEEEE;
+$black: #212121;
+
 .container {
     width: 100%;
     height: 100%;
     background: #ff5b47;
 
+    &.index {
+        background: $orange;
+    }
+
     &.test {
-        background: #309ddb;
+        background: $blue;
+        color: $white;
     }
 
     .text {
