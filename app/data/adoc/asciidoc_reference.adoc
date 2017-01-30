@@ -1,0 +1,717 @@
+= AsciiDoc Syntax Quick Reference
+:toc:
+:experimental:
+
+[[paragraphs]]
+== Paragraphs
+
+=== Normal
+
+Normal Paragraphs don't require any special markup in Asciidoc.
+
+=== Line breaks
+
+Rubies are red. +
+Topazes are blue.
+
+[%hardbreaks]
+Ruby is red.
+Java is black.
+
+=== Literal
+
+A normal paragraph.
+
+    A sequence of lines that begin with at least one space is a literal paragraph.
+    Literal paragraphs are treated as preformatted text.
+    The text is shown in a fixed-width font
+    and endlines are preserved.
+
+Another normal paragraph.
+
+=== Admonition
+
+NOTE: An admonition paragraph draws the reader's attention to auxiliary information.
+Its purpose is determined by the label
+at the beginning of the paragraph.
+
+Here are the other built-in admonition types:
+
+TIP: Pro tip...
+
+IMPORTANT: Don't forget...
+
+WARNING: Watch out for...
+
+CAUTION: Ensure that...
+
+=== Lead paragraph
+
+[.lead]
+This text will be styled as a lead paragraph (i.e., larger font).
+
+== Formatted Text
+
+=== Bold, Italic, and Monospace
+
+_italic phrase_
+
+__i__talic le__tt__ers
+
+*bold phrase*
+
+**b**old le**tt**ers
+
+*_bold italic phrase_*
+
+**__b__**old italic le**__tt__**ers
+
+`monospace phrase` and le``tt``ers
+
+`*monospace bold phrase*` and le`**tt**`ers
+
+`*_monospace bold italic phrase_*` and le``**__tt__**``ers
+
+=== Custom styling
+
+Werewolves are #allergic to cinnamon#.
+
+Do werewolves believe in [small]#small print#?
+
+[big]##O##nce upon an infinite loop.
+
+=== Superscript and Subscript
+
+^super^script phrase
+
+~sub~script phrase
+
+=== Curved Quotation Marks and Apostrophes
+
+'`single curved quotes`'
+
+"`double curved quotes`"
+
+Olaf's desk was a mess.
+
+All of the werewolves`' desks were a mess.
+
+Olaf had been with the company since the `'60s.
+
+== Document Header
+
+=== Article doctype
+
+= Document Title (Level 0)
+
+[[section-titles]]
+== Level 1 Section Title
+
+=== Level 2 Section Title
+
+==== Level 3 Section Title
+
+===== Level 4 Section Title
+
+====== Level 5 Section Title
+
+=== Explicit id
+
+[[primitives-nulls]]
+== Primitive types and null values
+
+== Include Files
+
+=== Document parts
+
+include::basics.adoc[]
+
+=== Include content from a URL
+
+include::http://www.herop.me/github/css/main.css[]
+
+== Horizontal Rules and Page Breaks
+
+=== Horizontal rule
+
+'''
+
+=== Page break
+
+<<<
+
+== List
+
+=== Unordered, max nesting
+
+* Level 1
+** Level 2
+*** Level 3
+**** Level 4
+***** Level 5
+* Level 1
+
+=== Checklist
+
+- [*] checked
+- [x] alse checked
+- [ ] not checked
+
+=== Ordered, max nesting
+
+. Level 1
+.. Level 2
+... Level 3
+.... Level 4
+..... Level 5
+. Level 1
+
+=== Labeled, single-line
+
+first term:: definition of first term
+section term:: definition of second term
+
+=== Labeled, multi-line
+
+first term::
+definition of first term
+section term::
+definition of second term
+
+=== Q&A
+
+[qanda]
+What is Asciidoctor?::
+    An implementation of the Asciidoc processor in Ruby.
+What is the answer to the Ultimate Question?:: 43
+
+== Link
+
+=== External
+
+http://asciidoctor.org - automatic!
+
+http://asciidoctor.org[Asciidoctor]
+
+https://github.com/asciidoctor[Asciidoctor @ *GitHub*]
+
+=== With spaces and special characters
+link:++http://example.org/?=[a,b]++[URL with special characters]
+link:http://example.org/?q=%5Ba%20b%5D[URL with special character]
+
+=== Windows path
+link:\\server\share\whitepaper.pdf[Whitepaper]
+
+=== Relative
+link:index.html[Docs]
+
+=== Inline anchors
+
+[[bookmark-a]]Inline anchors make arbitrary content referenceable.
+
+anchor:bookmark-b[]Use a cross reference to link to this location.
+
+=== Internal cross references
+
+See <<paragraphs>> to learn how to write paragraphs.
+
+Learn how to organize the document into <<section-titles,sections>>
+
+== Images
+
+=== Block
+
+image::sunset.jpg[]
+
+image::sunset.jpg[Sunset]
+
+[[img-sunset]]
+image::sunset.jpg[caption="Figure 1: ", title="A mountain sunset", alt="Sunset", width="300", height="200", link="http://www.naver.com"]
+
+image::http://asciidoctor.org/images/octocat.jpg[GitHub mascot]
+
+=== Inline
+
+Click image:icon/play.png[Play, title="Play"] to get the party started.
+Click image:icon/pause.png[title="Pause"] when you need a break.
+
+=== Inline image with positioning role
+
+image:sunset.jpg[Sunset,150,150,role="right"] What a beautiful sunset!
+
+== Videos
+
+=== Block
+
+video::video_file.mp4[]
+video::vidoe_file.mp4[width=640, start=60, end=140, options=autoplay]
+
+=== Embedded Youtube video
+
+video::kSdb39OmVC4[youtube]
+
+=== Embedded Vimeo video
+
+video::193729267[vimeo]
+
+== Source Code
+
+=== Inline
+
+Reference code like `types` or `methods` inline.
+
+=== Literal line
+
+    Indent the line one space to insert a code snippet
+
+=== Literal block
+
+....
+error: The requested operation returned error: 1954 Forbidden search for defensive operations...
+....
+
+=== Listing block with title, no syntax highlighting
+
+.Gemfile.lock
+----
+GEM
+    remote: https://rubygems.org/
+    specs:
+        asciidoctor (0.1.4)
+
+PLATFORMS
+    ruby
+
+DEPENDENCIES
+    asciidoctor (~> 0.1.4)
+----
+
+=== Code block with title and syntax highlighting
+
+[[app-listing]]
+[source,ruby]
+.app.rb
+----
+require 'sinatra'
+
+get '/hi' do
+    "Hello World!"
+end
+----
+
+=== Code block with callouts
+[source,ruby]
+----
+require 'sinatra' // <1>
+
+get '/hi' do // <2>
+    "Hello World!" // <3>
+end
+----
+<1> Library import
+<2> URL mapping
+<3> HTTP response body
+
+== More Delimited Blocks
+
+=== Sidebar
+
+.AsciiDoc history
+****
+AsciiDoc was first released in Nov 2002 by Stuart Rackham.
+****
+
+=== Example
+
+.Sample docment
+====
+Here's a sample Asciidoc document:
+
+[listing]
+....
+= Title of Document
+Doc Writer
+:toc:
+
+This guide provides...
+....
+
+The document header is useful, but not required.
+====
+
+=== Admonition
+
+[NOTE]
+====
+An admonition block may contain complex content.
+
+.A list
+- one
+- two
+- three
+
+Another paragraph.
+====
+
+=== Blockquote
+
+[quote, Abraham Lincoln, Address delivered at the dedication of the Cemetery at Gettysburg]
+____
+Four score and seven years ago our fathers brought forth
+on this continent a new nation...
+____
+
+[quote, Albert Einstein]
+A person who never made a mistake never tried anything new.
+
+____
+A person who never made a mistake never tried anything new.
+____
+
+=== Passthrough
+
+++++
+<p>
+Content in a passthrough block is passed to the output unprocessed.
+That means you can unclude raw HTML, like this embeded Gist:
+</p>
+
+<script src="http://www.herop.me/github/js/main.js"></script>
+++++
+
+== Block Id, Role and Options
+
+=== Traditional markup method for assigning block id and role
+
+[[goals]]
+[role="incremental"]
+* Goal 1
+* Goal 2
+
+=== Traditional markup method for assigning quoted text anchor (id) and role
+
+[[free_the_world]][big goal]_free the world_
+
+=== Role assigned to text enclosed in backticks
+
+[rolename]`monospace text`
+
+=== Traditional markup method for assigning block options
+
+[options="header,footer,autowidth"]
+|===
+|Cell A |Cell B
+|===
+
+== Comments
+
+=== Line
+
+// A single-line comment
+
+=== Block
+
+////
+A multi-line comment.
+
+Notice it's a delimited block.
+////
+
+== Tables
+
+=== Table with a title, three columns, a header, and two rows of content
+
+.Table Title
+|===
+|Name of Column 1 |Name of Column 2 |Name of Column 3
+|col 1, row 1
+|col 2, row 1
+|col 3, row 1
+
+|col 1, row 2
+|col 2, row 2
+|col 3, row 2
+|===
+
+=== Table with three columns, a header, and two rows of content
+
+[cols="1,1,2", options="header"]
+.Applications
+|===
+|Name
+|Category
+|Description
+
+|Firefox
+|Browser
+|Mozilla Firefox is an open-source web browser.
+It's designed for standards compliance,
+performance, portability.
+
+|Arquillian
+|Testing
+|An innovative and highly extensible testing platform.
+Empowers developers to easily create real, automated tests.
+|===
+
+[cols="2,2,5a"]
+|===
+|Firefox
+|Browser
+|Mozilla Firefox is an open-source web browser.
+
+It's designed for:
+
+* standards compliance
+* performance
+* portability
+
+http://getfirefox.com[Get Firefox]!
+|===
+
+=== Table from CSV data
+
+[format="csv", options="header"]
+|===
+Artist, Track, Genre
+Baauser, Harlem, Hip Hop
+The Lumineers, Ho Hey, Folk Rock
+|===
+
+=== Table with formatted, aligned and merged cells
+
+[cols="e,m,^,>s", width="40%"]
+|===
+|1
+>s|2
+|3
+|4
+^|5
+2.2+^.^|6
+.3+<.>m|7
+^|8
+|9
+2+>|10
+|===
+
+== UI Macros
+
+=== Keyboard shortcuts (inline kbd macro)
+
+|===
+|Shortcut |Purpose
+
+|kbd:[F11]
+|Toggle fullscreen
+
+|kbd:[Ctrl + T]
+|Open a new tab
+
+|kbd:[Ctrl + Shift + N]
+|New incognito window
+
+|kbd:[Ctrl + +]
+|Increase Zoom
+|===
+
+kbd:[Alt + Command + Shift + Fn + F5]
+
+=== Menu selections (inline menu macro)
+
+To save the file, select menu:File[Save].
+
+Select menu:View[Zoom > Reset] to reset the zoom level to the default setting.
+
+=== Button (inline btn macro)
+
+Press the btn:[OK] button when you are finished.
+
+Select a file in the file navigator and click btn:[Open].
+
+== Attributes and Substitutions
+
+=== Attribute declaration and usage
+
+:homepage: http://asciidoctor.org
+:docslink: http://asciidoctor.org/docs[Asciidoctor's Docs]
+:summary: Asciidoctor is a mature, plain-text document format for \
+    writing notes, articles, documentation, books, and more.
+:checkedbox: pass:normal[{startsb}&#10004;{endsb}]
+
+Check out {homepage}[Asciidoctor]!
+
+{summary}
+
+Check out {docslink} too!
+
+{checkedbox} That's done!
+
+=== Counter attributes
+
+[caption=""]
+.Parts{counter2:index:7}
+|===
+|Number |index
+
+|First |{counter:index}
+|Second |{counter:index}
+|Third |{counter:index}
+|===
+
+== Text Replacement
+
+=== Textual symbol replacements
+
+[cols="1,1a,1", options="header"]
+|===
+|Name |Syntax |Rendered
+
+|Copyright
+|
+----
+(C)
+----
+|(C)
+
+|Registered
+|
+----
+(R)
+----
+|(R)
+
+|Trademark
+|
+----
+(TM)
+----
+|(TM)
+
+|Em dash
+|
+----
+--
+----
+|--
+
+|ellipses
+|
+----
+...
+----
+|...
+
+|right single arrow
+|
+----
+->
+----
+|->
+
+|right double arrow
+|
+----
+=>
+----
+|=>
+
+|left single arrow
+|
+----
+<-
+----
+|<-
+
+|left double arrow
+|
+----
+<=
+----
+|<=
+
+|apostrophe
+|
+----
+Sam's
+----
+|Sam's
+|===
+
+== Escaping Text
+
+=== Backslash
+
+\*stars* is not rendered as bold text.
+The asterisks around the word are preserved.
+
+\{author} is not resolved to the author name.
+The curly brackets around the word are preserved.
+
+=== Triple plus and inline passthrough macro
+
++++<u>underline me</u>+++ renders as underlined text.
+
+pass:[<u>underline me</u>] also renders as underlined text.
+
+== Bibliography
+
+=== References
+
+_The Pragmatic Programmer_ <<prag>> should be required reading for all developers.
+
+[bibliography]
+- [[[prag]]] Andy Hunt & Dave Thomas. The Pragmatic Programmer: From Journeyman to Master. Addison-Wesley. 1999.
+- [[[seam]]] Dan Allen. Seam in Action. Manning Publication. 2008.
+
+== Footnotes
+
+=== Normal and reusable footnotes
+
+A statement.footnote:[Clarification about this statement.]
+
+A bold statement.footnoteref:[disclaimer,Options are my own.]
+
+Another bold statement.footnoteref:[disclaimer]
+
+== Markdown Compatibility
+
+=== Markdown-style headings
+
+# Document Title (Lv1)
+
+## Section Lv1
+
+### Section Lv2
+
+#### Section Lv3
+
+##### Section Lv4
+
+###### Section Lv5
+
+=== Fenced code block with syntax highlighting
+
+```js
+function Hello() {
+    console.log('Hello World!');
+}
+```
+
+=== Markdown-style blockquote
+
+> I hold it that a little rebellion now and then is a good thing,
+> and as necessary in the political world as storms in the physical.
+> -- Thomas Jefferson, Papers of Thomas Jefferson: Volume 11
+
+> > What's new?
+>
+> I've got Markdown in my Asciidoc!
+>
+> > Like what?
+
+=== Markdown-style
+
+---
+- - -
+***
+* * *

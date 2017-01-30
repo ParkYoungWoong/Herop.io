@@ -1,0 +1,61 @@
+@charset "UTF-8";
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+// FONT
+$noto: 'Noto Sans KR', sans-serif;
+$nanum:  'Nanum Gothic', serif;
+
+// COLOR
+$red: #f44336;
+$orange: #FF5722;
+$yellow: #FFC107;
+$green: #4CAF50;
+$blue: #2196F3;
+$indigo: #3F51B5;
+$violet: #E91E63;
+$white: #EEEEEE;
+$black: #212121;
+
+body {
+
+  .container {
+    font-family: $nanum;
+
+    .contents {
+      width: 860px;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      color: $indigo;
+      font-family: $noto;
+      font-weight: 700;
+    }
+
+    .title,
+    .toc #toctitle {
+      color: $black;
+    }
+
+    .tableblock {
+      border-collapse: collapse;
+    }
+
+    .quoteblock blockquote:before {
+      color: $black;
+    }
+
+    .hljs {
+      padding: 1em 1.5em;
+      border-radius: 4px;
+    }
+
+    .literalblock pre, .listingblock pre:not(.highlight), .listingblock pre[class="highlight"], .listingblock pre[class^="highlight "], .listingblock pre.CodeRay, .listingblock pre.prettyprint {
+      background: none;
+    }
+
+    .literalblock pre, .listingblock pre:not(.highlight), .listingblock pre[class="highlight"], .listingblock pre[class^="highlight "], .listingblock pre.CodeRay, .listingblock pre.prettyprint {
+      padding: 0;
+    }
+  }
+}

@@ -2,6 +2,10 @@
 @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 
+// FONT
+$noto: 'Noto Sans KR', sans-serif;
+$nanum:  'Nanum Gothic', serif;
+
 // COLOR
 $red: #f44336;
 $orange: #FF5722;
@@ -13,15 +17,10 @@ $violet: #E91E63;
 $white: #EEEEEE;
 $black: #212121;
 
-// FONT
-$noto: 'Noto Sans KR', sans-serif;
-$nanum:  'Nanum Gothic', serif;
-
-
 // COMMON
 html, body {
-    width: 100%;
-    height: 100%;
+    //width: 100%;
+    //height: 100%;
 }
 body {
     font-family: $nanum;
@@ -42,28 +41,10 @@ h6 { font-size: 14px; }
 .container {
     width: 100%;
     height: 100%;
-    background: #ff5b47;
+    padding: 30px;
+    font-family: $nanum;
 
-    &.index {
-        background: $orange;
-    }
+    &.html-cheat-sheet {
 
-    &.test {
-        background: $blue;
-        color: $white;
-    }
-
-    h1 {
-        color: white;
-        text-align: center;
-        padding: 50px 0 10px 0;
-    }
-
-    .text {
-        font-size: 14px;
-        color: white;
-        text-align: center;
-        padding-top: 50px;
-        line-height: 1.5;
     }
 }

@@ -1,0 +1,1504 @@
+<h1>AsciiDoc Syntax Quick Reference</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#paragraphs">Paragraphs</a>
+<ul class="sectlevel2">
+<li><a href="#_normal">Normal</a></li>
+<li><a href="#_line_breaks">Line breaks</a></li>
+<li><a href="#_literal">Literal</a></li>
+<li><a href="#_admonition">Admonition</a></li>
+<li><a href="#_lead_paragraph">Lead paragraph</a></li>
+</ul>
+</li>
+<li><a href="#_formatted_text">Formatted Text</a>
+<ul class="sectlevel2">
+<li><a href="#_bold_italic_and_monospace">Bold, Italic, and Monospace</a></li>
+<li><a href="#_custom_styling">Custom styling</a></li>
+<li><a href="#_superscript_and_subscript">Superscript and Subscript</a></li>
+<li><a href="#_curved_quotation_marks_and_apostrophes">Curved Quotation Marks and Apostrophes</a></li>
+</ul>
+</li>
+<li><a href="#_document_header">Document Header</a>
+<ul class="sectlevel2">
+<li><a href="#_article_doctype">Article doctype</a></li>
+</ul>
+</li>
+<li><a href="#_document_title_level_0">Document Title (Level 0)</a>
+<ul class="sectlevel1">
+<li><a href="#section-titles">Level 1 Section Title</a>
+<ul class="sectlevel2">
+<li><a href="#_level_2_section_title">Level 2 Section Title</a></li>
+<li><a href="#_explicit_id">Explicit id</a></li>
+</ul>
+</li>
+<li><a href="#primitives-nulls">Primitive types and null values</a></li>
+<li><a href="#_include_files">Include Files</a>
+<ul class="sectlevel2">
+<li><a href="#_document_parts">Document parts</a></li>
+<li><a href="#_include_content_from_a_url">Include content from a URL</a></li>
+</ul>
+</li>
+<li><a href="#_horizontal_rules_and_page_breaks">Horizontal Rules and Page Breaks</a>
+<ul class="sectlevel2">
+<li><a href="#_horizontal_rule">Horizontal rule</a></li>
+<li><a href="#_page_break">Page break</a></li>
+</ul>
+</li>
+<li><a href="#_list">List</a>
+<ul class="sectlevel2">
+<li><a href="#_unordered_max_nesting">Unordered, max nesting</a></li>
+<li><a href="#_checklist">Checklist</a></li>
+<li><a href="#_ordered_max_nesting">Ordered, max nesting</a></li>
+<li><a href="#_labeled_single_line">Labeled, single-line</a></li>
+<li><a href="#_labeled_multi_line">Labeled, multi-line</a></li>
+<li><a href="#_q_a">Q&amp;A</a></li>
+</ul>
+</li>
+<li><a href="#_link">Link</a>
+<ul class="sectlevel2">
+<li><a href="#_external">External</a></li>
+<li><a href="#_with_spaces_and_special_characters">With spaces and special characters</a></li>
+<li><a href="#_windows_path">Windows path</a></li>
+<li><a href="#_relative">Relative</a></li>
+<li><a href="#_inline_anchors">Inline anchors</a></li>
+<li><a href="#_internal_cross_references">Internal cross references</a></li>
+</ul>
+</li>
+<li><a href="#_images">Images</a>
+<ul class="sectlevel2">
+<li><a href="#_block">Block</a></li>
+<li><a href="#_inline">Inline</a></li>
+<li><a href="#_inline_image_with_positioning_role">Inline image with positioning role</a></li>
+</ul>
+</li>
+<li><a href="#_videos">Videos</a>
+<ul class="sectlevel2">
+<li><a href="#_block_2">Block</a></li>
+<li><a href="#_embedded_youtube_video">Embedded Youtube video</a></li>
+<li><a href="#_embedded_vimeo_video">Embedded Vimeo video</a></li>
+</ul>
+</li>
+<li><a href="#_source_code">Source Code</a>
+<ul class="sectlevel2">
+<li><a href="#_inline_2">Inline</a></li>
+<li><a href="#_literal_line">Literal line</a></li>
+<li><a href="#_literal_block">Literal block</a></li>
+<li><a href="#_listing_block_with_title_no_syntax_highlighting">Listing block with title, no syntax highlighting</a></li>
+<li><a href="#_code_block_with_title_and_syntax_highlighting">Code block with title and syntax highlighting</a></li>
+<li><a href="#_code_block_with_callouts">Code block with callouts</a></li>
+</ul>
+</li>
+<li><a href="#_more_delimited_blocks">More Delimited Blocks</a>
+<ul class="sectlevel2">
+<li><a href="#_sidebar">Sidebar</a></li>
+<li><a href="#_example">Example</a></li>
+<li><a href="#_admonition_2">Admonition</a></li>
+<li><a href="#_blockquote">Blockquote</a></li>
+<li><a href="#_passthrough">Passthrough</a></li>
+</ul>
+</li>
+<li><a href="#_block_id_role_and_options">Block Id, Role and Options</a>
+<ul class="sectlevel2">
+<li><a href="#_traditional_markup_method_for_assigning_block_id_and_role">Traditional markup method for assigning block id and role</a></li>
+<li><a href="#_traditional_markup_method_for_assigning_quoted_text_anchor_id_and_role">Traditional markup method for assigning quoted text anchor (id) and role</a></li>
+<li><a href="#_role_assigned_to_text_enclosed_in_backticks">Role assigned to text enclosed in backticks</a></li>
+<li><a href="#_traditional_markup_method_for_assigning_block_options">Traditional markup method for assigning block options</a></li>
+</ul>
+</li>
+<li><a href="#_comments">Comments</a>
+<ul class="sectlevel2">
+<li><a href="#_line">Line</a></li>
+<li><a href="#_block_3">Block</a></li>
+</ul>
+</li>
+<li><a href="#_tables">Tables</a>
+<ul class="sectlevel2">
+<li><a href="#_table_with_a_title_three_columns_a_header_and_two_rows_of_content">Table with a title, three columns, a header, and two rows of content</a></li>
+<li><a href="#_table_with_three_columns_a_header_and_two_rows_of_content">Table with three columns, a header, and two rows of content</a></li>
+<li><a href="#_table_from_csv_data">Table from CSV data</a></li>
+<li><a href="#_table_with_formatted_aligned_and_merged_cells">Table with formatted, aligned and merged cells</a></li>
+</ul>
+</li>
+<li><a href="#_ui_macros">UI Macros</a>
+<ul class="sectlevel2">
+<li><a href="#_keyboard_shortcuts_inline_kbd_macro">Keyboard shortcuts (inline kbd macro)</a></li>
+<li><a href="#_menu_selections_inline_menu_macro">Menu selections (inline menu macro)</a></li>
+<li><a href="#_button_inline_btn_macro">Button (inline btn macro)</a></li>
+</ul>
+</li>
+<li><a href="#_attributes_and_substitutions">Attributes and Substitutions</a>
+<ul class="sectlevel2">
+<li><a href="#_attribute_declaration_and_usage">Attribute declaration and usage</a></li>
+<li><a href="#_counter_attributes">Counter attributes</a></li>
+</ul>
+</li>
+<li><a href="#_text_replacement">Text Replacement</a>
+<ul class="sectlevel2">
+<li><a href="#_textual_symbol_replacements">Textual symbol replacements</a></li>
+</ul>
+</li>
+<li><a href="#_escaping_text">Escaping Text</a>
+<ul class="sectlevel2">
+<li><a href="#_backslash">Backslash</a></li>
+<li><a href="#_triple_plus_and_inline_passthrough_macro">Triple plus and inline passthrough macro</a></li>
+</ul>
+</li>
+<li><a href="#_bibliography">Bibliography</a>
+<ul class="sectlevel2">
+<li><a href="#_references">References</a></li>
+</ul>
+</li>
+<li><a href="#_footnotes">Footnotes</a>
+<ul class="sectlevel2">
+<li><a href="#_normal_and_reusable_footnotes">Normal and reusable footnotes</a></li>
+</ul>
+</li>
+<li><a href="#_markdown_compatibility">Markdown Compatibility</a>
+<ul class="sectlevel2">
+<li><a href="#_markdown_style_headings">Markdown-style headings</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_document_title_lv1">Document Title (Lv1)</a>
+<ul class="sectlevel1">
+<li><a href="#_section_lv1">Section Lv1</a>
+<ul class="sectlevel2">
+<li><a href="#_section_lv2">Section Lv2</a></li>
+<li><a href="#_fenced_code_block_with_syntax_highlighting">Fenced code block with syntax highlighting</a></li>
+<li><a href="#_markdown_style_blockquote">Markdown-style blockquote</a></li>
+<li><a href="#_markdown_style">Markdown-style</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="paragraphs">Paragraphs</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_normal">Normal</h3>
+<div class="paragraph">
+<p>Normal Paragraphs don&#8217;t require any special markup in Asciidoc.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_line_breaks">Line breaks</h3>
+<div class="paragraph">
+<p>Rubies are red.<br>
+Topazes are blue.</p>
+</div>
+<div class="paragraph">
+<p>Ruby is red.<br>
+Java is black.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_literal">Literal</h3>
+<div class="paragraph">
+<p>A normal paragraph.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>A sequence of lines that begin with at least one space is a literal paragraph.
+Literal paragraphs are treated as preformatted text.
+The text is shown in a fixed-width font
+and endlines are preserved.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Another normal paragraph.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_admonition">Admonition</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+An admonition paragraph draws the reader&#8217;s attention to auxiliary information.
+Its purpose is determined by the label
+at the beginning of the paragraph.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Here are the other built-in admonition types:</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+Pro tip&#8230;&#8203;
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+Don&#8217;t forget&#8230;&#8203;
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Warning</div>
+</td>
+<td class="content">
+Watch out for&#8230;&#8203;
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Caution</div>
+</td>
+<td class="content">
+Ensure that&#8230;&#8203;
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_lead_paragraph">Lead paragraph</h3>
+<div class="paragraph lead">
+<p>This text will be styled as a lead paragraph (i.e., larger font).</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_formatted_text">Formatted Text</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_bold_italic_and_monospace">Bold, Italic, and Monospace</h3>
+<div class="paragraph">
+<p><em>italic phrase</em></p>
+</div>
+<div class="paragraph">
+<p><em>i</em>talic le<em>tt</em>ers</p>
+</div>
+<div class="paragraph">
+<p><strong>bold phrase</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>b</strong>old le<strong>tt</strong>ers</p>
+</div>
+<div class="paragraph">
+<p><strong><em>bold italic phrase</em></strong></p>
+</div>
+<div class="paragraph">
+<p><strong><em>b</em></strong>old italic le<strong><em>tt</em></strong>ers</p>
+</div>
+<div class="paragraph">
+<p><code>monospace phrase</code> and le<code>tt</code>ers</p>
+</div>
+<div class="paragraph">
+<p><code><strong>monospace bold phrase</strong></code> and le`<strong>tt</strong>`ers</p>
+</div>
+<div class="paragraph">
+<p><code><strong><em>monospace bold italic phrase</em></strong></code> and le<code><strong><em>tt</em></strong></code>ers</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_custom_styling">Custom styling</h3>
+<div class="paragraph">
+<p>Werewolves are <mark>allergic to cinnamon</mark>.</p>
+</div>
+<div class="paragraph">
+<p>Do werewolves believe in <span class="small">small print</span>?</p>
+</div>
+<div class="paragraph">
+<p><span class="big">O</span>nce upon an infinite loop.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_superscript_and_subscript">Superscript and Subscript</h3>
+<div class="paragraph">
+<p><sup>super</sup>script phrase</p>
+</div>
+<div class="paragraph">
+<p><sub>sub</sub>script phrase</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_curved_quotation_marks_and_apostrophes">Curved Quotation Marks and Apostrophes</h3>
+<div class="paragraph">
+<p>&#8216;single curved quotes&#8217;</p>
+</div>
+<div class="paragraph">
+<p>&#8220;double curved quotes&#8221;</p>
+</div>
+<div class="paragraph">
+<p>Olaf&#8217;s desk was a mess.</p>
+</div>
+<div class="paragraph">
+<p>All of the werewolves&#8217; desks were a mess.</p>
+</div>
+<div class="paragraph">
+<p>Olaf had been with the company since the &#8217;60s.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_document_header">Document Header</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_article_doctype">Article doctype</h3>
+
+</div>
+</div>
+</div>
+<h1 id="_document_title_level_0" class="sect0">Document Title (Level 0)</h1>
+<div class="sect1">
+<h2 id="section-titles">Level 1 Section Title</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_level_2_section_title">Level 2 Section Title</h3>
+<div class="sect3">
+<h4 id="_level_3_section_title">Level 3 Section Title</h4>
+<div class="sect4">
+<h5 id="_level_4_section_title">Level 4 Section Title</h5>
+<div class="sect5">
+<h6 id="_level_5_section_title">Level 5 Section Title</h6>
+
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_explicit_id">Explicit id</h3>
+
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="primitives-nulls">Primitive types and null values</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_include_files">Include Files</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_document_parts">Document parts</h3>
+<div class="paragraph">
+<p><a href="basics.adoc" class="bare">basics.adoc</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_include_content_from_a_url">Include content from a URL</h3>
+<div class="paragraph">
+<p><a href="http://www.herop.me/github/css/main.css" class="bare">http://www.herop.me/github/css/main.css</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_horizontal_rules_and_page_breaks">Horizontal Rules and Page Breaks</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_horizontal_rule">Horizontal rule</h3>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="_page_break">Page break</h3>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_list">List</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_unordered_max_nesting">Unordered, max nesting</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Level 1</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Level 2</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Level 3</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Level 4</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Level 5</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Level 1</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_checklist">Checklist</h3>
+<div class="ulist checklist">
+<ul class="checklist">
+<li>
+<p>&#10003; checked</p>
+</li>
+<li>
+<p>&#10003; alse checked</p>
+</li>
+<li>
+<p>&#10063; not checked</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ordered_max_nesting">Ordered, max nesting</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Level 1</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Level 2</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Level 3</p>
+<div class="olist upperalpha">
+<ol class="upperalpha" type="A">
+<li>
+<p>Level 4</p>
+<div class="olist upperroman">
+<ol class="upperroman" type="I">
+<li>
+<p>Level 5</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Level 1</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_labeled_single_line">Labeled, single-line</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">first term</dt>
+<dd>
+<p>definition of first term</p>
+</dd>
+<dt class="hdlist1">section term</dt>
+<dd>
+<p>definition of second term</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_labeled_multi_line">Labeled, multi-line</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">first term</dt>
+<dd>
+<p>definition of first term</p>
+</dd>
+<dt class="hdlist1">section term</dt>
+<dd>
+<p>definition of second term</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_q_a">Q&amp;A</h3>
+<div class="qlist qanda">
+<ol>
+<li>
+<p><em>What is Asciidoctor?</em></p>
+<p>An implementation of the Asciidoc processor in Ruby.</p>
+</li>
+<li>
+<p><em>What is the answer to the Ultimate Question?</em></p>
+<p>43</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_link">Link</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_external">External</h3>
+<div class="paragraph">
+<p><a href="http://asciidoctor.org" class="bare">http://asciidoctor.org</a> - automatic!</p>
+</div>
+<div class="paragraph">
+<p><a href="http://asciidoctor.org">Asciidoctor</a></p>
+</div>
+<div class="paragraph">
+<p><a href="https://github.com/asciidoctor">Asciidoctor @ <strong>GitHub</strong></a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_with_spaces_and_special_characters">With spaces and special characters</h3>
+<div class="paragraph">
+<p><a href="http://example.org/?=[a,b]">URL with special characters</a>
+<a href="http://example.org/?q=%5Ba%20b%5D">URL with special character</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_windows_path">Windows path</h3>
+<div class="paragraph">
+<p><a href="\\server\share\whitepaper.pdf">Whitepaper</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_relative">Relative</h3>
+<div class="paragraph">
+<p><a href="index.html">Docs</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_inline_anchors">Inline anchors</h3>
+<div class="paragraph">
+<p><a id="bookmark-a"></a>Inline anchors make arbitrary content referenceable.</p>
+</div>
+<div class="paragraph">
+<p><a id="bookmark-b"></a>Use a cross reference to link to this location.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_internal_cross_references">Internal cross references</h3>
+<div class="paragraph">
+<p>See <a href="#paragraphs">Paragraphs</a> to learn how to write paragraphs.</p>
+</div>
+<div class="paragraph">
+<p>Learn how to organize the document into <a href="#section-titles">sections</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_images">Images</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_block">Block</h3>
+<div class="imageblock">
+<div class="content">
+<img src="sunset.jpg" alt="sunset">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="sunset.jpg" alt="Sunset">
+</div>
+</div>
+<div id="img-sunset" class="imageblock">
+<div class="content">
+<a class="image" href="http://www.naver.com"><img src="sunset.jpg" alt="Sunset" width="300" height="200"></a>
+</div>
+<div class="title">Figure 1: A mountain sunset</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="http://asciidoctor.org/images/octocat.jpg" alt="GitHub mascot">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_inline">Inline</h3>
+<div class="paragraph">
+<p>Click <span class="image"><img src="icon/play.png" alt="Play" title="Play"></span> to get the party started.
+Click <span class="image"><img src="icon/pause.png" alt="pause" title="Pause"></span> when you need a break.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_inline_image_with_positioning_role">Inline image with positioning role</h3>
+<div class="paragraph">
+<p><span class="image right"><img src="sunset.jpg" alt="Sunset" width="150" height="150"></span> What a beautiful sunset!</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_videos">Videos</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_block_2">Block</h3>
+<div class="videoblock">
+<div class="content">
+<video src="video_file.mp4" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+<div class="videoblock">
+<div class="content">
+<video src="vidoe_file.mp4#t=60,140" width="640" autoplay controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_embedded_youtube_video">Embedded Youtube video</h3>
+<div class="videoblock">
+<div class="content">
+<iframe src="https://www.youtube.com/embed/kSdb39OmVC4?rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_embedded_vimeo_video">Embedded Vimeo video</h3>
+<div class="videoblock">
+<div class="content">
+<iframe src="https://player.vimeo.com/video/193729267" frameborder="0" allowfullscreen></iframe>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_source_code">Source Code</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_inline_2">Inline</h3>
+<div class="paragraph">
+<p>Reference code like <code>types</code> or <code>methods</code> inline.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_literal_line">Literal line</h3>
+<div class="literalblock">
+<div class="content">
+<pre>Indent the line one space to insert a code snippet</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_literal_block">Literal block</h3>
+<div class="literalblock">
+<div class="content">
+<pre>error: The requested operation returned error: 1954 Forbidden search for defensive operations...</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_listing_block_with_title_no_syntax_highlighting">Listing block with title, no syntax highlighting</h3>
+<div class="listingblock">
+<div class="title">Gemfile.lock</div>
+<div class="content">
+<pre>GEM
+    remote: https://rubygems.org/
+    specs:
+        asciidoctor (0.1.4)
+
+PLATFORMS
+    ruby
+
+DEPENDENCIES
+    asciidoctor (~&gt; 0.1.4)</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_code_block_with_title_and_syntax_highlighting">Code block with title and syntax highlighting</h3>
+<div id="app-listing" class="listingblock">
+<div class="title">app.rb</div>
+<div class="content">
+<pre class="highlight"><code class="language-ruby" data-lang="ruby">require 'sinatra'
+
+get '/hi' do
+    "Hello World!"
+end</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_code_block_with_callouts">Code block with callouts</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-ruby" data-lang="ruby">require 'sinatra' <b class="conum">(1)</b>
+
+get '/hi' do <b class="conum">(2)</b>
+    "Hello World!" <b class="conum">(3)</b>
+end</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>Library import</p>
+</li>
+<li>
+<p>URL mapping</p>
+</li>
+<li>
+<p>HTTP response body</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_more_delimited_blocks">More Delimited Blocks</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_sidebar">Sidebar</h3>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">AsciiDoc history</div>
+<div class="paragraph">
+<p>AsciiDoc was first released in Nov 2002 by Stuart Rackham.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_example">Example</h3>
+<div class="exampleblock">
+<div class="title">Example 1. Sample docment</div>
+<div class="content">
+<div class="paragraph">
+<p>Here&#8217;s a sample Asciidoc document:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>= Title of Document
+Doc Writer
+:toc:
+
+This guide provides...</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The document header is useful, but not required.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_admonition_2">Admonition</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>An admonition block may contain complex content.</p>
+</div>
+<div class="ulist">
+<div class="title">A list</div>
+<ul>
+<li>
+<p>one</p>
+</li>
+<li>
+<p>two</p>
+</li>
+<li>
+<p>three</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Another paragraph.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_blockquote">Blockquote</h3>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Four score and seven years ago our fathers brought forth
+on this continent a new nation&#8230;&#8203;</p>
+</div>
+</blockquote>
+<div class="attribution">
+&#8212; Abraham Lincoln<br>
+<cite>Address delivered at the dedication of the Cemetery at Gettysburg</cite>
+</div>
+</div>
+<div class="quoteblock">
+<blockquote>
+A person who never made a mistake never tried anything new.
+</blockquote>
+<div class="attribution">
+&#8212; Albert Einstein
+</div>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>A person who never made a mistake never tried anything new.</p>
+</div>
+</blockquote>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_passthrough">Passthrough</h3>
+<p>
+Content in a passthrough block is passed to the output unprocessed.
+That means you can unclude raw HTML, like this embeded Gist:
+</p>
+
+<script src="http://www.herop.me/github/js/main.js"></script>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_block_id_role_and_options">Block Id, Role and Options</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_traditional_markup_method_for_assigning_block_id_and_role">Traditional markup method for assigning block id and role</h3>
+<div id="goals" class="ulist incremental">
+<ul>
+<li>
+<p>Goal 1</p>
+</li>
+<li>
+<p>Goal 2</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_traditional_markup_method_for_assigning_quoted_text_anchor_id_and_role">Traditional markup method for assigning quoted text anchor (id) and role</h3>
+<div class="paragraph">
+<p><a id="free_the_world"></a><em class="big goal">free the world</em></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_role_assigned_to_text_enclosed_in_backticks">Role assigned to text enclosed in backticks</h3>
+<div class="paragraph">
+<p><code class="rolename">monospace text</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_traditional_markup_method_for_assigning_block_options">Traditional markup method for assigning block options</h3>
+<table class="tableblock frame-all grid-all">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Cell A</th>
+<th class="tableblock halign-left valign-top">Cell B</th>
+</tr>
+</thead>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_comments">Comments</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_line">Line</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_block_3">Block</h3>
+
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_tables">Tables</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_table_with_a_title_three_columns_a_header_and_two_rows_of_content">Table with a title, three columns, a header, and two rows of content</h3>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 1. Table Title</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of Column 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of Column 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of Column 3</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">col 1, row 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">col 2, row 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">col 3, row 1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">col 1, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">col 2, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">col 3, row 2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_table_with_three_columns_a_header_and_two_rows_of_content">Table with three columns, a header, and two rows of content</h3>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 2. Applications</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Category</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Firefox</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Browser</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mozilla Firefox is an open-source web browser.
+It&#8217;s designed for standards compliance,
+performance, portability.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Arquillian</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Testing</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An innovative and highly extensible testing platform.
+Empowers developers to easily create real, automated tests.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 22.2222%;">
+<col style="width: 55.5556%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Firefox</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Browser</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Mozilla Firefox is an open-source web browser.</p>
+</div>
+<div class="paragraph">
+<p>It&#8217;s designed for:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>standards compliance</p>
+</li>
+<li>
+<p>performance</p>
+</li>
+<li>
+<p>portability</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><a href="http://getfirefox.com">Get Firefox</a>!</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_table_from_csv_data">Table from CSV data</h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Artist</th>
+<th class="tableblock halign-left valign-top">Track</th>
+<th class="tableblock halign-left valign-top">Genre</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Baauser</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Harlem</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hip Hop</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Lumineers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ho Hey</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Folk Rock</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_table_with_formatted_aligned_and_merged_cells">Table with formatted, aligned and merged cells</h3>
+<table class="tableblock frame-all grid-all" style="width: 40%;">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>1</em></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><strong>2</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><strong>4</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><em>5</em></p></td>
+<td class="tableblock halign-center valign-middle" colspan="2" rowspan="2"><p class="tableblock"><code>6</code></p></td>
+<td class="tableblock halign-left valign-bottom" rowspan="3"><p class="tableblock"><code>7</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><em>8</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>9</em></p></td>
+<td class="tableblock halign-right valign-top" colspan="2"><p class="tableblock"><code>10</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ui_macros">UI Macros</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_keyboard_shortcuts_inline_kbd_macro">Keyboard shortcuts (inline kbd macro)</h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Shortcut</th>
+<th class="tableblock halign-left valign-top">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>F11</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Toggle fullscreen</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="keyseq"><kbd>Ctrl</kbd>+<kbd>T</kbd></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Open a new tab</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>N</kbd></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">New incognito window</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="keyseq"><kbd>Ctrl</kbd>+<kbd>+</kbd></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Increase Zoom</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><span class="keyseq"><kbd>Alt</kbd>+<kbd>Command</kbd>+<kbd>Shift</kbd>+<kbd>Fn</kbd>+<kbd>F5</kbd></span></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_menu_selections_inline_menu_macro">Menu selections (inline menu macro)</h3>
+<div class="paragraph">
+<p>To save the file, select <span class="menuseq"><span class="menu">File</span>&#160;&#9656; <span class="menuitem">Save</span></span>.</p>
+</div>
+<div class="paragraph">
+<p>Select <span class="menuseq"><span class="menu">View</span>&#160;&#9656; <span class="submenu">Zoom</span>&#160;&#9656; <span class="menuitem">Reset</span></span> to reset the zoom level to the default setting.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_button_inline_btn_macro">Button (inline btn macro)</h3>
+<div class="paragraph">
+<p>Press the <b class="button">OK</b> button when you are finished.</p>
+</div>
+<div class="paragraph">
+<p>Select a file in the file navigator and click <b class="button">Open</b>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_attributes_and_substitutions">Attributes and Substitutions</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_attribute_declaration_and_usage">Attribute declaration and usage</h3>
+<div class="paragraph">
+<p>Check out <a href="http://asciidoctor.org">Asciidoctor</a>!</p>
+</div>
+<div class="paragraph">
+<p>Asciidoctor is a mature, plain-text document format for writing notes, articles, documentation, books, and more.</p>
+</div>
+<div class="paragraph">
+<p>Check out <a href="http://asciidoctor.org/docs">Asciidoctor&#8217;s Docs</a> too!</p>
+</div>
+<div class="paragraph">
+<p>[&#10004;] That&#8217;s done!</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_counter_attributes">Counter attributes</h3>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Parts</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Number</th>
+<th class="tableblock halign-left valign-top">index</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">First</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Second</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">9</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Third</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_text_replacement">Text Replacement</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_textual_symbol_replacements">Textual symbol replacements</h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Syntax</th>
+<th class="tableblock halign-left valign-top">Rendered</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Copyright</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="listingblock">
+<div class="content">
+<pre>(C)</pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#169;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Registered</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="listingblock">
+<div class="content">
+<pre>(R)</pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#174;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Trademark</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="listingblock">
+<div class="content">
+<pre>(TM)</pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8482;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Em dash</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="listingblock">
+<div class="content">
+<pre>--</pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ellipses</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="listingblock">
+<div class="content">
+<pre>...</pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">right single arrow</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="listingblock">
+<div class="content">
+<pre>-&gt;</pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8594;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">right double arrow</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="listingblock">
+<div class="content">
+<pre>=&gt;</pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8658;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">left single arrow</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="listingblock">
+<div class="content">
+<pre>&lt;-</pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8592;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">left double arrow</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="listingblock">
+<div class="content">
+<pre>&lt;=</pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8656;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">apostrophe</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="listingblock">
+<div class="content">
+<pre>Sam's</pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sam&#8217;s</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_escaping_text">Escaping Text</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_backslash">Backslash</h3>
+<div class="paragraph">
+<p>*stars* is not rendered as bold text.
+The asterisks around the word are preserved.</p>
+</div>
+<div class="paragraph">
+<p>{author} is not resolved to the author name.
+The curly brackets around the word are preserved.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_triple_plus_and_inline_passthrough_macro">Triple plus and inline passthrough macro</h3>
+<div class="paragraph">
+<p><u>underline me</u> renders as underlined text.</p>
+</div>
+<div class="paragraph">
+<p><u>underline me</u> also renders as underlined text.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_bibliography">Bibliography</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_references">References</h3>
+<div class="paragraph">
+<p><em>The Pragmatic Programmer</em> <a href="#prag">[prag]</a> should be required reading for all developers.</p>
+</div>
+<div class="ulist bibliography">
+<ul class="bibliography">
+<li>
+<p><a id="prag"></a>[prag] Andy Hunt &amp; Dave Thomas. The Pragmatic Programmer: From Journeyman to Master. Addison-Wesley. 1999.</p>
+</li>
+<li>
+<p><a id="seam"></a>[seam] Dan Allen. Seam in Action. Manning Publication. 2008.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_footnotes">Footnotes</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_normal_and_reusable_footnotes">Normal and reusable footnotes</h3>
+<div class="paragraph">
+<p>A statement.<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnote_1" title="View footnote.">1</a>]</sup></p>
+</div>
+<div class="paragraph">
+<p>A bold statement.<sup class="footnote" id="_footnote_disclaimer">[<a id="_footnoteref_2" class="footnote" href="#_footnote_2" title="View footnote.">2</a>]</sup></p>
+</div>
+<div class="paragraph">
+<p>Another bold statement.<sup class="footnoteref">[<a class="footnote" href="#_footnote_2" title="View footnote.">2</a>]</sup></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_markdown_compatibility">Markdown Compatibility</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_markdown_style_headings">Markdown-style headings</h3>
+
+</div>
+</div>
+</div>
+<h1 id="_document_title_lv1" class="sect0">Document Title (Lv1)</h1>
+<div class="sect1">
+<h2 id="_section_lv1">Section Lv1</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_section_lv2">Section Lv2</h3>
+<div class="sect3">
+<h4 id="_section_lv3">Section Lv3</h4>
+<div class="sect4">
+<h5 id="_section_lv4">Section Lv4</h5>
+<div class="sect5">
+<h6 id="_section_lv5">Section Lv5</h6>
+
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_fenced_code_block_with_syntax_highlighting">Fenced code block with syntax highlighting</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">function Hello() {
+    console.log('Hello World!');
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_markdown_style_blockquote">Markdown-style blockquote</h3>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>I hold it that a little rebellion now and then is a good thing,
+and as necessary in the political world as storms in the physical.</p>
+</div>
+</blockquote>
+<div class="attribution">
+&#8212; Thomas Jefferson<br>
+<cite>Papers of Thomas Jefferson: Volume 11</cite>
+</div>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>What&#8217;s new?</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>I&#8217;ve got Markdown in my Asciidoc!</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Like what?</p>
+</div>
+</blockquote>
+</div>
+</blockquote>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_markdown_style">Markdown-style</h3>
+<hr>
+<hr>
+<hr>
+<hr>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnote_1">
+<a href="#_footnoteref_1">1</a>. Clarification about this statement.
+</div>
+<div class="footnote" id="_footnote_2">
+<a href="#_footnoteref_2">2</a>. Options are my own.
+</div>
+</div>

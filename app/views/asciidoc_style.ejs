@@ -5,16 +5,18 @@
     <title><%= title %></title>
 
     <% include partials/head.ejs %>
+    <% include partials/highlight.ejs %>
 
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/asciidoc.css">
 
     <script src="/js/main.js"></script>
 
 </head>
 <body>
-<div class="container test">
+<div class="container">
 
-
+    <% include ../data/adoc_convert/asciidoc_reference.html %>
 
 </div>
 <% include partials/google_analytic.ejs %>

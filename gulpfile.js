@@ -4,9 +4,11 @@ var gulp = require('gulp'),
   liveReload = require('gulp-livereload'),
   sass = require('gulp-sass'),
   uglify = require('gulp-uglify'),
-  nodemon = require('gulp-nodemon');
+  nodemon = require('gulp-nodemon'),
+  asciidoctor = require('gulp-asciidoctor');
 
 var src = './app/sources',
+  adoc = './app/data/adoc/**',
   dist = './public',
   paths = {
     src: {
@@ -16,6 +18,10 @@ var src = './app/sources',
       scss: [
         src + '/scss/reset.css',
         src + '/scss/main.scss'
+      ],
+      asciidocStyle: [
+        src + '/scss/asciidoc.scss',
+        src + '/scss/asciidoc_custom.scss'
       ],
       js: [
         src + '/js/lib/jquery-1.10.1.min.js',
@@ -61,9 +67,27 @@ gulp.task('nodemon', function () {
 
 gulp.task('watch', function () {
   liveReload.listen();
+  gulp.watch(adoc, ['asciidoctor']);
+  gulp.watch(paths.src.asciidocStyle, ['convert-asciidoc']);
   gulp.watch(paths.src.scss, ['compile-sass']);
   gulp.watch(paths.src.js, ['combine-js']);
   gulp.watch(dist + '/**').on('change', liveReload.changed);
+});
+
+gulp.task('asciidoctor', function () {
+  return gulp.src('./app/data/adoc/*.adoc')
+    .pipe(asciidoctor({
+      header_footer: false,
+      attributes: ['showtitle']
+    }))
+    .pipe(gulp.dest('./app/data/adoc_convert'));
+});
+
+gulp.task('convert-asciidoc', function () {
+  return gulp.src(paths.src.asciidocStyle)
+    .pipe(concat('asciidoc.scss'))
+    .pipe(sass())
+    .pipe(gulp.dest(paths.dist.css));
 });
 
 // Default Task
@@ -72,5 +96,7 @@ gulp.task('default', [
   'compile-sass',
   'combine-js',
   'nodemon',
-  'watch'
+  'watch',
+  'asciidoctor',
+  'convert-asciidoc'
 ]);
