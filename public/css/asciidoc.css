@@ -1586,6 +1586,8 @@ p {
 
 body .container {
   font-family: "Nanum Gothic", serif; }
+  body .container .toc {
+    font-size: 12px; }
   body .container .contents {
     width: 860px; }
   body .container h1, body .container h2, body .container h3, body .container h4, body .container h5, body .container h6 {
