@@ -22,6 +22,10 @@ body {
   .container {
     font-family: $nanum;
 
+    .toc {
+      font-size: 12px;
+    }
+
     .contents {
       width: 860px;
     }

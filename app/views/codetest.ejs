@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ko">
+<head>
+
+    <title><%= title %></title>
+
+    <% include partials/head.ejs %>
+    <% include partials/highlight.ejs %>
+
+    <link rel="stylesheet" href="/css/main.css">
+
+    <script src="/js/main.js"></script>
+
+</head>
+<body>
+<div class="container test">
+
+    <ul>
+        <li>length: <%= length %></li>
+        <li>_id: <%= row._id %></li>
+        <li><%= row.language %></li>
+        <li><%= row.level %></li>
+        <li><%= row.question %></li>
+        <li><%= row.example1 %></li>
+        <li><%= row.example2 %></li>
+        <li><%= row.example3 %></li>
+        <li><%= row.correctAnswer %></li>
+    </ul>
+    <div>왜 안떠?!</div>
+
+</div>
+<% include partials/google_analytic.ejs %>
+</body>
+</html>

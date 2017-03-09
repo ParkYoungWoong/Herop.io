@@ -24,6 +24,6 @@
 ```
 
 pass:[
-<p data-height="265" data-theme-id="light" data-slug-hash="xRvobg" data-default-tab="js" data-user="heropark" data-embed-version="2" data-pen-title="xRvobg" class="codepen">See the Pen <a href="http://codepen.io/heropark/pen/xRvobg/">xRvobg</a> by park young woong (<a href="http://codepen.io/heropark">@heropark</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<p data-height="400" data-theme-id="light" data-slug-hash="xRvobg" data-default-tab="js" data-user="heropark" data-embed-version="2" data-pen-title="xRvobg" class="codepen">See the Pen <a href="http://codepen.io/heropark/pen/xRvobg/">xRvobg</a> by park young woong (<a href="http://codepen.io/heropark">@heropark</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 ]
